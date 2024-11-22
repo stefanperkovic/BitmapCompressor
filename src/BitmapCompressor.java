@@ -44,7 +44,9 @@ public class BitmapCompressor {
                 consecutive_seq ++;
             }
             else{
-                BinaryStdOut.write((byte) consecutive_seq);
+                if(consecutive_seq > 4){
+                    BinaryStdOut.write((byte) consecutive_seq);
+                }
                 BinaryStdOut.write(current_bit == '1');
                 consecutive_seq = 1;
                 current_bit = bit;
