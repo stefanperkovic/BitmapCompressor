@@ -1,6 +1,6 @@
 # BitmapCompressor
 #### A puzzle created by Zach Blick for Adventures in Algorithms at Menlo School in Atherton, CA
-
+ 
 ## Your goal
 Complete the functions, `compress()` and `expand()`.
 
