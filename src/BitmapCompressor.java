@@ -44,15 +44,14 @@ public class BitmapCompressor {
                 consecutive_seq ++;
             }
             else{
+                BinaryStdOut.write((byte) consecutive_seq);
+                BinaryStdOut.write(current_bit == '1');
                 consecutive_seq = 1;
                 current_bit = bit;
             }
-
-
-
-
-            }
-
+        }
+        BinaryStdOut.write((byte) consecutive_seq);
+        BinaryStdOut.write(current_bit == '1');
 
 
 
@@ -65,7 +64,15 @@ public class BitmapCompressor {
      */
     public static void expand() {
 
-        // TODO: complete expand()
+        while(!BinaryStdIn.isEmpty()){
+            int runLength = BinaryStdIn.readByte();
+            boolean bit = BinaryStdIn.readBoolean();
+            for (int i = 0; i < runLength; i++) {
+                BinaryStdOut.write(bit);
+            }
+
+        }
+
 
         BinaryStdOut.close();
     }
