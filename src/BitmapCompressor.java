@@ -34,18 +34,23 @@ public class BitmapCompressor {
     public static void compress() {
 
         int consecutive_seq = 0;
+        // Start with a zero bit
         boolean current_bit = false;
 
+        // Go until each bit has been read
         while(!BinaryStdIn.isEmpty()){
             boolean bit = BinaryStdIn.readBoolean();
             if (bit == current_bit){
                 consecutive_seq ++;
+                // Creates length-encoder and loops back around
                 if (consecutive_seq == 256){
                     BinaryStdOut.write( 255, 8);
+                    // Indicates zero occurrences of te opposite bit
                     BinaryStdOut.write( 0, 8);
                     consecutive_seq = 1;
                 }
             }
+            // Writes out length of the last bit and then flips the bit
             else{
                 BinaryStdOut.write(consecutive_seq, 8);
                 consecutive_seq = 1;
@@ -64,11 +69,14 @@ public class BitmapCompressor {
      */
     public static void expand() {
         boolean bit = false;
+        // Goes until every bit is read
         while(!BinaryStdIn.isEmpty()){
             int runLength = BinaryStdIn.readInt(8);
+            // Writes out occurrences of hte corresponding bit
             for (int i = 0; i < runLength; i++) {
                 BinaryStdOut.write(bit);
             }
+            // Flips bit
             bit = !bit;
         }
 
