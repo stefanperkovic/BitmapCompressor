@@ -42,11 +42,14 @@ public class BitmapCompressor {
             char bit = bits.charAt(i);
             if (bit == current_bit){
                 consecutive_seq ++;
+                if (consecutive_seq == 256){
+                    BinaryStdOut.write((byte) 255);
+                    BinaryStdOut.write(current_bit == '1');
+                    consecutive_seq = 1;
+                }
             }
             else{
-                if(consecutive_seq > 4){
-                    BinaryStdOut.write((byte) consecutive_seq);
-                }
+                BinaryStdOut.write((byte) consecutive_seq);
                 BinaryStdOut.write(current_bit == '1');
                 consecutive_seq = 1;
                 current_bit = bit;
@@ -74,7 +77,6 @@ public class BitmapCompressor {
             }
 
         }
-
 
         BinaryStdOut.close();
     }
