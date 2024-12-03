@@ -32,32 +32,27 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void compress() {
-        String bits = BinaryStdIn.readString();
-        int length = bits.length();
 
         int consecutive_seq = 0;
-        char current_bit = bits.charAt(0);
+        boolean current_bit = false;
 
-        for(int i = 0; i < length; i++){
-            char bit = bits.charAt(i);
+        while(!BinaryStdIn.isEmpty()){
+            boolean bit = BinaryStdIn.readBoolean();
             if (bit == current_bit){
                 consecutive_seq ++;
                 if (consecutive_seq == 256){
-                    BinaryStdOut.write((byte) 255);
-                    BinaryStdOut.write(current_bit == '1');
+                    BinaryStdOut.write( 255, 8);
+                    BinaryStdOut.write( 0, 8);
                     consecutive_seq = 1;
                 }
             }
             else{
-                BinaryStdOut.write((byte) consecutive_seq);
-                BinaryStdOut.write(current_bit == '1');
+                BinaryStdOut.write(consecutive_seq, 8);
                 consecutive_seq = 1;
                 current_bit = bit;
             }
         }
-        BinaryStdOut.write((byte) consecutive_seq);
-        BinaryStdOut.write(current_bit == '1');
-
+        BinaryStdOut.write(consecutive_seq, 8);
 
 
         BinaryStdOut.close();
@@ -68,14 +63,13 @@ public class BitmapCompressor {
      * and writes the results to standard output.
      */
     public static void expand() {
-
+        boolean bit = false;
         while(!BinaryStdIn.isEmpty()){
-            int runLength = BinaryStdIn.readByte();
-            boolean bit = BinaryStdIn.readBoolean();
+            int runLength = BinaryStdIn.readInt(8);
             for (int i = 0; i < runLength; i++) {
                 BinaryStdOut.write(bit);
             }
-
+            bit = !bit;
         }
 
         BinaryStdOut.close();
