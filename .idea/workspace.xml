@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5344144c-2391-49b9-ba87-481b14af2cb8" name="Changes" comment="Fixed loop around and got rid of header boundry.">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WORK_LOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_LOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BitmapCompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BitmapCompressor.java" afterDir="false" />
-    </list>
+    <list default="true" id="5344144c-2391-49b9-ba87-481b14af2cb8" name="Changes" comment="Fixed code to correspond with new theory." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733198365127</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed code to correspond with new theory.">
+      <option name="closed" value="true" />
+      <created>1733242185203</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733242185203</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -144,6 +147,7 @@
     <MESSAGE value="Added more to compress and expand" />
     <MESSAGE value="Added length requirnment. Thinking about next steps." />
     <MESSAGE value="Fixed loop around and got rid of header boundry." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed loop around and got rid of header boundry." />
+    <MESSAGE value="Fixed code to correspond with new theory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed code to correspond with new theory." />
   </component>
 </project>
